@@ -6,6 +6,8 @@ Parameters : 1 - BOOLEAN dynamic simulation on /of
 Usage : spawn 
 Returns : VOID
 */
+if (!isServer) exitWith {};
+
 params [
 
 	["_side",sideUnknown,[sideUnknown]],
@@ -13,8 +15,6 @@ params [
 ];
 
 private ["_sideNum","_logicCenter","_logicGroup","_hqPapa"];
-
-if (!isServer) exitWith {};
 
 _sideNum = [0,1,2] select ([EAST,WEST,INDEPENDENT] find _side);
 _logicCenter = createCenter sideLogic;

@@ -9,6 +9,7 @@ Parameters : 4 - STRING  players faction class Default "BLU_F"
 Usage : spawn 
 Returns : VOID
 */
+if (!isServer) exitWith {};
 
 params [
 ["_side",sideUnknown,[sideUnknown]],
@@ -24,7 +25,6 @@ private [
 "_uavs", "_planes", "_supp_slingLoadVehicles"
 ];
 
-if (!isServer) exitWith {};
 
 _sidenum = [0,1,2] select ([EAST,WEST,INDEPENDENT] find _side);
 _allSideAirCfgPaths = "
