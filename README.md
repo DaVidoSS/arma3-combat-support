@@ -3,6 +3,14 @@ It provides full battle support for Arma 3 game
 
 Project partialy done,
 
+Done:
+
+Supply box drop
+
+Cargo lift
+
+Artillery
+
 
 
 TO DO
