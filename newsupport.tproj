@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectRootNode Name="newsupport" IsExpanded="true" FileName="">
+    <IsSelected>false</IsSelected>
+    <SubNodes>
+      <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="support" IsExpanded="true" FileName="support">
+        <IsSelected>false</IsSelected>
+        <SubNodes>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="dialog" IsExpanded="true" FileName="support\dialog">
+            <IsSelected>false</IsSelected>
+            <SubNodes>
+              <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="functions" IsExpanded="true" FileName="support\dialog\functions">
+                <IsSelected>false</IsSelected>
+                <SubNodes>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_dialogMap.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_dialogMap.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onCallButtonHit.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onCallButtonHit.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onComboSelect.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onComboSelect.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onExitButtonHit.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onExitButtonHit.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onLeftLBselect.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onLeftLBselect.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onLoadDialog.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onLoadDialog.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onMiddleLBselect.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onMiddleLBselect.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                  <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_onRightLBselect.sqf" IsExpanded="false" FileName="support\dialog\functions\fn_onRightLBselect.sqf">
+                    <IsSelected>false</IsSelected>
+                    <SubNodes />
+                  </ProjectNodeViewModel>
+                </SubNodes>
+              </ProjectNodeViewModel>
+            </SubNodes>
+          </ProjectNodeViewModel>
+          <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="functions" IsExpanded="true" FileName="support\functions">
+            <IsSelected>false</IsSelected>
+            <SubNodes>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_addComms.sqf" IsExpanded="false" FileName="support\functions\fn_addComms.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_artillery.sqf" IsExpanded="false" FileName="support\functions\fn_artillery.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_callSupport.sqf" IsExpanded="false" FileName="support\functions\fn_callSupport.sqf">
+                <IsSelected>true</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_casbombing.sqf" IsExpanded="false" FileName="support\functions\fn_casbombing.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_casheli.sqf" IsExpanded="false" FileName="support\functions\fn_casheli.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_casStrike.sqf" IsExpanded="false" FileName="support\functions\fn_casStrike.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_createLogic.sqf" IsExpanded="false" FileName="support\functions\fn_createLogic.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_dropboxInit.sqf" IsExpanded="false" FileName="support\functions\fn_dropboxInit.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_getClasses.sqf" IsExpanded="false" FileName="support\functions\fn_getClasses.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_getSlingloadVeh.sqf" IsExpanded="false" FileName="support\functions\fn_getSlingloadVeh.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_handleCargoLift.sqf" IsExpanded="false" FileName="support\functions\fn_handleCargoLift.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_inventoryFill.sqf" IsExpanded="false" FileName="support\functions\fn_inventoryFill.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_ordnance.sqf" IsExpanded="false" FileName="support\functions\fn_ordnance.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_prepareSupport.sqf" IsExpanded="false" FileName="support\functions\fn_prepareSupport.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_supplydrop.sqf" IsExpanded="false" FileName="support\functions\fn_supplydrop.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_supplyvehicledrop.sqf" IsExpanded="false" FileName="support\functions\fn_supplyvehicledrop.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_transport.sqf" IsExpanded="false" FileName="support\functions\fn_transport.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_uavFeed.sqf" IsExpanded="false" FileName="support\functions\fn_uavFeed.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="fn_uavsupport.sqf" IsExpanded="false" FileName="support\functions\fn_uavsupport.sqf">
+                <IsSelected>false</IsSelected>
+                <SubNodes />
+              </ProjectNodeViewModel>
+            </SubNodes>
+          </ProjectNodeViewModel>
+        </SubNodes>
+      </ProjectNodeViewModel>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="description.ext" IsExpanded="false" FileName="description.ext">
+        <IsSelected>false</IsSelected>
+        <SubNodes />
+      </ProjectNodeViewModel>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="init.sqf" IsExpanded="false" FileName="init.sqf">
+        <IsSelected>false</IsSelected>
+        <SubNodes />
+      </ProjectNodeViewModel>
+      <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="initPlayerLocal.sqf" IsExpanded="false" FileName="initPlayerLocal.sqf">
+        <IsSelected>false</IsSelected>
+        <SubNodes />
+      </ProjectNodeViewModel>
+    </SubNodes>
+  </ProjectRootNode>
+  <FilteredAnalyzerResultItems />
+</Project>

@@ -1,0 +1,24 @@
+allowFunctionsLog = 1;
+allowFunctionsRecompile = 1;
+#include "support\dialog\defines.hpp"
+#include "support\dialog\support_call_system_dialog.hpp"
+#include "support\dialog\support.hpp"
+
+
+class CfgFunctions	{
+#include "support\dialog\functions.hpp"
+	
+};
+
+class CfgSounds	{
+	
+	sounds[] = {};
+	
+#include "support\dialog\sound.hpp"
+};
+class CfgRadio	{
+
+	sounds[] = {};
+			
+#include "support\dialog\radio.hpp"
+};

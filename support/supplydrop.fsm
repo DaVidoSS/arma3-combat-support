@@ -1,0 +1,388 @@
+/*%FSM<COMPILE "D:\Gry\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, supplydrop">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"INIT_",0,250,-697.949890,755.682312,-626.992493,815.553650,0.000000,"" \n "INIT" \n ""};
+item1[] = {"EXIT",1,250,-536.505005,965.241028,-467.688721,1003.052124,0.000000,"EXIT"};
+item2[] = {"server_check",4,218,-568.864563,750.688049,-446.751221,832.801208,1.000000,"server check"};
+item3[] = {"TRUE",8,218,-716.902039,864.371277,-626.902039,914.371277,0.000000,"TRUE"};
+item4[] = {"SPAWN__SUPPLY__V",2,250,-708.424255,966.061584,-629.425659,1016.232422,0.000000,"SPAWN " \n "SUPPLY" \n " VEH"};
+item5[] = {"heli_ready_or_de",4,218,-738.372131,1086.260010,-600.675537,1181.150879,0.000000,"heli ready" \n "or dead"};
+item6[] = {"nothing",2,250,-714.241516,1247.759277,-624.241516,1297.759399,0.000000,"nothing"};
+item7[] = {"heli_alive",4,218,-716.095337,1363.132324,-626.095337,1413.132324,0.000000,"heli alive"};
+item8[] = {"heli_dead",4,218,-596.531738,1251.511108,-506.531738,1301.511108,0.000000,"heli dead"};
+item9[] = {"EXIT_",2,250,-468.252258,1263.110474,-433.521973,1300.556274,0.000000,"EXIT "};
+item10[] = {"TRUE",8,218,-389.200378,1256.501953,-299.200378,1306.501953,0.000000,"TRUE"};
+item11[] = {"create___drop_bo",2,4346,-718.336853,1474.731689,-628.336853,1524.731689,0.000000,"create &" \n "drop box"};
+item12[] = {"check_if_finishe",4,218,-720.235779,1595.776489,-623.193054,1654.831421,0.000000,"check if finished"};
+item13[] = {"nothing_1",2,250,-719.667114,1691.622314,-629.667114,1741.622314,0.000000,"nothing"};
+item14[] = {"heli_not_removed",4,218,-543.447815,1693.739868,-453.447815,1743.739868,0.000000,"heli not removed"};
+item15[] = {"destroyed",2,250,-361.564209,1686.042358,-285.606262,1740.622925,0.000000,"destroyed"};
+item16[] = {"heli_not_exist",4,218,-716.991272,1795.327515,-626.991272,1845.327759,1.000000,"heli not exist"};
+item17[] = {"avaible",2,250,-263.021851,1788.461060,-209.389893,1846.637695,0.000000,"avaible"};
+link0[] = {0,2};
+link1[] = {0,3};
+link2[] = {2,1};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,7};
+link7[] = {6,8};
+link8[] = {7,11};
+link9[] = {8,9};
+link10[] = {9,10};
+link11[] = {10,1};
+link12[] = {11,12};
+link13[] = {12,13};
+link14[] = {13,14};
+link15[] = {13,16};
+link16[] = {14,15};
+link17[] = {15,10};
+link18[] = {16,17};
+link19[] = {17,10};
+globals[] = {0.000000,0,0,0,0,640,480,1,40,6316128,1,-1160.729736,32.560425,1918.871582,673.454163,847,884,1};
+window[] = {2,-1,-1,-1,-1,758,234,1254,234,3,865};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "supplydrop";
+        class States
+        {
+                /*%FSM<STATE "INIT_">*/
+                class INIT_
+                {
+                        name = "INIT_";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [" \n
+                         "	[""_caller"",objNull,[objNull]]," \n
+                         "	[""_position"",[],[[]]]," \n
+                         "	[""_heliclass"","""",[""""]]," \n
+                         "	[""_boxclass"","""",[""""]]," \n
+                         "	[""_chuteType"","""",[""""]]," \n
+                         "	[""_boxCode"",{},[{}]]," \n
+                         "	[""_helistart"",[],[[]]]," \n
+                         "	[""_side"",sideUnknown,[sideUnknown]]," \n
+                         "	[""_dialogMarker"","""",[""""]]" \n
+                         "];" \n
+                         "private [""_vehiclearray"", ""_heli"", ""_heligrp"",  ""_wp1"", ""_chute"", ""_crate"", ""_wp2""];" \n
+                         "0 = [support_hqts, ""drop_request""] remoteExec [""sideRadio"", _side, false];" \n
+                         "missionNamespace setVariable [""support_ready"",false,true];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "server_check">*/
+                                class server_check
+                                {
+                                        itemno = 2;
+                                        priority = 1.000000;
+                                        to="EXIT";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isServer"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="SPAWN__SUPPLY__V";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "EXIT">*/
+                class EXIT
+                {
+                        name = "EXIT";
+                        itemno = 1;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "SPAWN__SUPPLY__V">*/
+                class SPAWN__SUPPLY__V
+                {
+                        name = "SPAWN__SUPPLY__V";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_vehiclearray = [_helistart, 0, _heliclass, _side] call bis_fnc_spawnvehicle;" \n
+                         "_heli = _vehiclearray select 0;" \n
+                         "_heligrp = _vehiclearray select 2;" \n
+                         "if (dynamicSimulationSystemEnabled) then {" \n
+                         "{_x triggerDynamicSimulation false} forEach ((units _heligrp) + [_heli]);" \n
+                         "};" \n
+                         "_heli flyInHeight 150;" \n
+                         "0 = _side spawn {" \n
+                         "	sleep 5;" \n
+                         "	0 = [support_hqts,""drop_acknowledged""] remoteExec [""sideRadio"", _this, false];" \n
+                         "};" \n
+                         "_wp1 = _heligrp addWaypoint [_position, 0];" \n
+                         "_wp1 setWaypointType ""MOVE"";" \n
+                         "_wp1 setWaypointBehaviour ""CARELESS"";" \n
+                         "_wp1 setWaypointCombatMode ""BLUE"";" \n
+                         "_wp1 setWaypointStatements [""TRUE"", """"];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "heli_ready_or_de">*/
+                                class heli_ready_or_de
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="nothing";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(unitReady (vehicle driver _heli)) || {!alive _heli || {!canMove _heli}}"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nothing">*/
+                class nothing
+                {
+                        name = "nothing";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "heli_dead">*/
+                                class heli_dead
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="EXIT_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _heli || !canMove _heli"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "heli_alive">*/
+                                class heli_alive
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="create___drop_bo";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive _heli && canMove _heli"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "EXIT_">*/
+                class EXIT_
+                {
+                        name = "EXIT_";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/"0 = [_caller,_heli,_heligrp,_side] spawn {" \n
+                         "" \n
+                         "	params [""_requester"",""_suppheli"",""_suppgroup"",""_side""];" \n
+                         "	" \n
+                         "	0 = [support_hqts, ""drop_destroyed""] remoteExec [""sideRadio"", _side, false];" \n
+                         "	" \n
+                         "	if (alive _requester && (random 1 < 0.25)) then {" \n
+                         "	" \n
+                         "		sleep 4;" \n
+                         "		if (isNull objectParent _requester) then {" \n
+                         "	" \n
+                         "			0 = [_requester, [""fucksake"", 100, 1]] remoteExec [""say3D"", [0,-2] select isDedicated, false];" \n
+                         "		" \n
+                         "		} else {" \n
+                         "	" \n
+                         "			0 = [" \n
+                         "				(vehicle _requester)," \n
+                         "				""Ooh for fuck sake!""" \n
+                         "			] remoteExecCall [""vehicleChat"", (crew (vehicle _requester)) select {isPlayer _x}, false];" \n
+                         "		};					" \n
+                         "	};" \n
+                         "	" \n
+                         "	sleep 30;" \n
+                         "	" \n
+                         "	{deleteVehicle _x} forEach ((units _suppgroup) + [_suppheli]);" \n
+                         "	deleteGroup _suppgroup;" \n
+                         "	" \n
+                         "	sleep 30;" \n
+                         "	" \n
+                         "	missionNamespace setVariable [""support_ready"",true,true];" \n
+                         "	0 = [support_hqts,""support_standby""] remoteExec [""sideRadio"", _side, false];" \n
+                         "" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="EXIT";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "create___drop_bo">*/
+                class create___drop_bo
+                {
+                        name = "create___drop_bo";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/"0 = [support_hqts,""drop_accomplished""] remoteExec [""sideRadio"", _side, false];" \n
+                         "_chute = createVehicle [_chuteType, [0,0,200], [], 0, ""FLY""];" \n
+                         "_chute setPos [position _heli select 0, position _heli select 1, (position _heli select 2) - 60];" \n
+                         "_crate = createVehicle [_boxclass, position _chute, [], 0, 'NONE'];" \n
+                         "0 = [_crate,_side,_dialogMarker] spawn _boxCode;" \n
+                         "_crate attachTo [_chute, [0, 0, 0]];" \n
+                         "" \n
+                         "0 = [_crate, _chute] spawn {" \n
+                         "" \n
+                         "	private _box = _this select 0;" \n
+                         "	private _para = _this select 1;" \n
+                         "	" \n
+                         "	waitUntil {sleep 0.2; position _box select 2 < 2 || isNull _para};" \n
+                         "	" \n
+                         "	detach _box;" \n
+                         "	" \n
+                         "	if (!isNull _para) then {" \n
+                         "		_para setVelocity [0,5,0];" \n
+                         "		sleep 5;" \n
+                         "		deleteVehicle _para;" \n
+                         "	};" \n
+                         "};" \n
+                         "" \n
+                         "	_wp2 = _heligrp addWaypoint [_helistart, 1];" \n
+                         "	_wp2 setWaypointType ""MOVE"";" \n
+                         "	_wp2 setWaypointBehaviour ""CARELESS"";" \n
+                         "	_wp2 setWaypointCombatMode ""BLUE"";" \n
+                         "	_wp2 setWaypointStatements [""TRUE"", ""{deleteVehicle _x} forEach (thisList + [vehicle this]);""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "check_if_finishe">*/
+                                class check_if_finishe
+                                {
+                                        itemno = 12;
+                                        priority = 0.000000;
+                                        to="nothing_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNull _heli || {(!alive _heli || {!canMove _heli})}"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "nothing_1">*/
+                class nothing_1
+                {
+                        name = "nothing_1";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "heli_not_exist">*/
+                                class heli_not_exist
+                                {
+                                        itemno = 16;
+                                        priority = 1.000000;
+                                        to="avaible";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"isNull _heli"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "heli_not_removed">*/
+                                class heli_not_removed
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="destroyed";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _heli"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "destroyed">*/
+                class destroyed
+                {
+                        name = "destroyed";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"0 = [support_hqts, ""drop_destroyed""] remoteExec [""sideRadio"", _side, false];" \n
+                         "" \n
+                         "0 = [_heligrp,_heli,_caller,_side] spawn {" \n
+                         "" \n
+                         "	sleep 60; " \n
+                         "	{deleteVehicle _x} forEach ((units (_this select 0)) + [_this select 1]);" \n
+                         "	deleteGroup (_this select 0);" \n
+                         "	0 = [support_hqts,""support_standby""] remoteExec [""sideRadio"",(_this select 3), false];" \n
+                         "	missionNamespace setVariable [""support_ready"",true,true];" \n
+                         "" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="EXIT";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "avaible">*/
+                class avaible
+                {
+                        name = "avaible";
+                        itemno = 17;
+                        init = /*%FSM<STATEINIT""">*/"0 = _side spawn {		" \n
+                         "" \n
+                         "sleep 30;" \n
+                         "0 = [support_hqts,""support_standby""] remoteExec [""sideRadio"", _this, false];" \n
+                         "missionNamespace setVariable [""support_ready"",true,true];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "TRUE">*/
+                                class TRUE
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="EXIT";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="INIT_";
+        finalStates[] =
+        {
+                "EXIT",
+        };
+};
+/*%FSM</COMPILE>*/
